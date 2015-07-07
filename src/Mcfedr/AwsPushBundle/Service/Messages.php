@@ -109,15 +109,7 @@ class Messages
      */
     private function encodeMessage(Message $message)
     {
-        try {
-            $json = json_encode($message, JSON_UNESCAPED_UNICODE);
-            return $json;
-        } catch (\Exception $e) {
-            if ($e->getPrevious() instanceof MessageTooLongException) {
-                throw $e->getPrevious();
-            }
-            throw $e;
-        }
+        return $message;
     }
 
     /**
